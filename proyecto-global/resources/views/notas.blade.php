@@ -30,9 +30,10 @@
         <td>{{$nota->cantidad}}</td>
         <td>{{$nota->precio}}</td>
         <td>
-         <form action="" method="POST">
-          <a href="{{ route('notas.edit', ['id' => $nota->id]) }}" class="btn btn-info">Editar</a>         
-              
+         <form method="POST" action="{{ url("notas/{$nota->id}") }}">
+          <a href="{{ route('notas.edit', ['id' => $nota->id]) }}" class="btn btn-info">Editar</a>
+          @csrf
+          @method('DELETE')         
           <button type="submit" class="btn btn-danger">Delete</button>
          </form>          
         </td>        
