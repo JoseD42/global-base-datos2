@@ -9,8 +9,8 @@
               
         <h2>CREAR REGISTROS</h2>
 
-              <form action="" method="POST">
-                  
+              <form method="POST" action= "{{ url('crear') }}" >
+                @csrf  
                 <div class="mb-3">
                   <label for="" class="form-label">Código</label>
                   <input id="codigo" name="codigo" type="text" class="form-control" tabindex="1">    
