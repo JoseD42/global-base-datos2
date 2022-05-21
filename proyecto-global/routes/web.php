@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Notas;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('notas', function(){
-    $notas = DB::table('notas')->get();
+    $notas = Notas::all(); //DB::table('notas')->get();
 
 
     return view('notas', ['notas' => $notas]);
@@ -27,9 +29,7 @@ Route::get('agregar', function(){
 }); 
 
 Route::get('notas/{id}/editar', function($id){
-    $notas = DB::table('notas')
-        ->where('id', $id)
-        ->first();
+    $notas = Notas::find($id); //DB::table('notas')->where('id', $id)->first();
     return view('editar', ['notas' => $notas]);
     //return 'Aquí se va a editar las notas' .$id;
 })->name('notas.edit');
