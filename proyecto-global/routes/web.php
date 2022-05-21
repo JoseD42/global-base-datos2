@@ -33,3 +33,7 @@ Route::get('notas/{id}/editar', function($id){
     return view('editar', ['notas' => $notas]);
     //return 'Aquí se va a editar las notas' .$id;
 })->name('notas.edit');
+
+Route::get('editar', function(){
+    return view('editar');
+}); 

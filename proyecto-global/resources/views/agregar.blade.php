@@ -1,25 +1,35 @@
+@extends('layout')
+@section('content')
+  <body>
+    <div class="container">
+    <h1 class="bg-primary text-white text-center mb-3">CRUD con Laravel EJ. PARCIAL</h1>
 
-        @extends('layout')
-        
-        @section('content')
-        <main class="content">
-            <div class="cards">
-                <div class="card card-center">
-                    <div class="card-body">
-                        <h1>Nueva nota</h1>
 
-                        <form action="">
-                            <label for="title" class="field-label">Título: </label>
-                            <input type="text" name="title" id="title" class="field-input">
+    <div class="container">
+              
+        <h2>CREAR REGISTROS</h2>
 
-                            <label for="content" class="field-label">Contenido:</label>
-                            <textarea name="content" id="content" rows="10" class="field-textarea"></textarea>
-
-                            <button type="submit" class="btn btn-primary">Crear nota</button>
-                        </form>
-                    </div>
+              <form action="" method="POST">
+                  
+                <div class="mb-3">
+                  <label for="" class="form-label">Código</label>
+                  <input id="codigo" name="codigo" type="text" class="form-control" tabindex="1">    
                 </div>
-            </div>
-        </main>
-
-        @endsection
+                <div class="mb-3">
+                  <label for="" class="form-label">Descripción</label>
+                  <input id="descripcion" name="descripcion" type="text" class="form-control" tabindex="2">
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Cantidad</label>
+                  <input id="cantidad" name="cantidad" type="number" class="form-control" tabindex="3">
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Precio</label>
+                  <input id="precio" name="precio" type="number" step="any" value="0.00" class="form-control" tabindex="3">
+                </div>
+                <a href="/notas" class="btn btn-secondary" tabindex="5">Cancelar</a>
+                <button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>
+              </form>
+    </div>
+    </div>
+@endsection

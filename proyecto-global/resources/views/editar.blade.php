@@ -1,25 +1,38 @@
+@extends('layout')
+@section('content')
+  <body>
+    <div class="container">
+    <h1 class="bg-primary text-white text-center mb-3">CRUD con Laravel EJ. PARCIAL</h1>
 
-        @extends('layout')
-        
-        @section('content')
-        <main class="content">
-            <div class="cards">
-                <div class="card card-center">
-                    <div class="card-body">
-                        <h1>Editar nota</h1>
 
-                        <form action="">
-                            <label for="title" class="field-label">Título: </label>
-                            <input type="text" name="title" id="title" class="field-input">
+    <div class="container">
 
-                            <label for="content" class="field-label">Contenido:</label>
-                            <textarea name="content" id="content" rows="10" class="field-textarea"></textarea>
+      <h2>EDITAR REGISTROS</h2>
 
-                            <button type="submit" class="btn btn-primary">Crear nota</button>
-                        </form>
-                    </div>
-                </div>
+          <form action="" method="POST">
+              
+            <div class="mb-3">
+              <label for="" class="form-label">Código</label>
+              <input id="codigo" name="codigo" type="text" class="form-control" value="{{ $notas->codigo }}">    
             </div>
-        </main>
+            <div class="mb-3">
+              <label for="" class="form-label">Descripción</label>
+              <input id="descripcion" name="descripcion" type="text" class="form-control" value="{{ $notas->descripcion }}">
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Cantidad</label>
+              <input id="cantidad" name="cantidad" type="number" class="form-control" value="{{ $notas->cantidad }}">
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Precio</label>
+              <input id="precio" name="precio" type="number" step="any" class="form-control" value="{{ $notas->precio }}">
+            </div>
+            <a href="/notas" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </form>
+        
 
-        @endsection
+
+    </div>
+    </div>
+@endsection
